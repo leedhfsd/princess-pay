@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: card-payment
+
+  config:
+    import: "optional:configserver:https://github.com/leedhfsd/princess-pay-config.git"
+
+  datasource:
+    url: jdbc:mysql://localhost/card_payment?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ssafy
+    password: ssafy
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
